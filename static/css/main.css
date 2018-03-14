@@ -1,3 +1,8 @@
+.body{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+}
+
 .people-list{
   list-style-type: none;
   }
@@ -14,7 +19,7 @@
   height:150px
   border-radius:50px;
   margin:0;
-
+  float:right;
 }
 
 .img-container, .status{
@@ -22,14 +27,20 @@
   position:relative;
 }
 
-.busy{
-  background-color: red;
-  padding: 20px;
+.img-container{
+  width:175px;
+  heighr:100%;
+}
+
+/*.status p{
+  padding: 5px;
   margin-left:10px;
+}*/
+
+.busy{
+  background-color: #C3272B;
 }
 
 .avail{
-  background-color: green;
-  padding: 20px;
-  margin-left:10px;
+  background-color: #36D7B7;
 }

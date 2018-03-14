@@ -10,6 +10,7 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css" />
       <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="static/css/main.css">
 
 </head>
@@ -27,49 +28,25 @@
   <div class="people-status">
     <h3>Your Loved Ones</h3>
     <ul class="people-list">
-    <!--{% for highlight in data.values() %}
-    <li class=flash>{{ highlight }}</li>
-    {% endfor %}-->
-
     {% for entry in data["statuses"].values() %}
+
     <li class="col-md-2 person">
-      <div class="img-container">
+
+      {% if(entry["status"]=='busy' or entry["status"]=='working out at gym' or entry["status"]=='driving')  %}
+      <div class="busy img-container">
+      {% else %}
+      <div class="avail img-container">
+          {% endif %}
         <img class="person-img" src ="{{entry['img']}}"/>
       </div>
       <div class="status">
-         {% if entry["status"]=='Busy' %}
-         <p class="busy"><strong>{{entry["status"]}}</strong> {{ error }}</p>
-         {% elif entry["status"]=='Available'%}
-         <p class="avail"><strong>{{entry["status"]}}</strong> {{ error }}</p>
-         {% endif %}
+        <p><strong>{{entry["name"]}} - {{entry["relationship"] }}</strong></p>
+
+         <p>{{entry["status"]}}</p>
+
       </div>
     </li>
     {% endfor %}>
-
-    <!--li class="person">
-      <div class="img-container">
-        <img  class="person-img" src ="/static/img/1.jpeg"/>
-      </div>
-      <div class="status">
-        <p>Busy</p>
-      </div>
-    </li>
-    <li class="person">
-      <div class="img-container">
-        <img  class="person-img" src ="/static/img/2.jpeg"/>
-      </div>
-      <div class="status">
-        <p class="busy">Busy</p>
-      </div>
-    </li>
-    <li class="person">
-      <div class="img-container">
-        <img  class="person-img" src ="/static/img/3.jpeg"/>
-      </div>
-      <div class="status">
-        <p class="avail">Available</p>
-      </div>
-    </li-->
 
   </ul>
   </div>
