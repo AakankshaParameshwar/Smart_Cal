@@ -1,0 +1,20 @@
+{
+  "0": {
+    "name": "Alice",
+    "relationship":"Daughter",
+    "status":"Busy",
+    "img":"static/img/1.jpeg"
+    },
+    "1": {
+    "name": "Brandon",
+    "relationship":"Son",
+    "status":"Busy",
+     "img":"static/img/2.jpeg"
+    },
+    "2": {
+    "name": "Jason",
+    "relationship":"Grandson",
+    "status":"Available",
+     "img":"static/img/3.jpeg"
+    }
+}

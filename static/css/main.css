@@ -1,0 +1,35 @@
+.people-list{
+  list-style-type: none;
+  }
+
+.person{
+  width:100%;
+  display: block;
+  margin-left:-20px;
+  margin-bottom:20px;
+}
+
+.person-img{
+  width:150px;
+  height:150px
+  border-radius:50px;
+  margin:0;
+
+}
+
+.img-container, .status{
+  display: inline-block;
+  position:relative;
+}
+
+.busy{
+  background-color: red;
+  padding: 20px;
+  margin-left:10px;
+}
+
+.avail{
+  background-color: green;
+  padding: 20px;
+  margin-left:10px;
+}

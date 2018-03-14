@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title>Calender</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="Pragma" content="no-cache">
+      <meta http-equiv="Expires" content="-1">
+      <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <link rel="stylesheet" type="text/css" href="static/css/main.css">
+
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="space"></div>
+  <div class="row">
+    <!--div class="col-xs-2">
+    </div-->
+    <div class="col-md-8">
+<iframe class="idee" id="cal"  src="https://calendar.google.com/calendar/b/1/embed?showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=paulpeterson4321%40gmail.com&amp;color=%231B887A&amp;ctz=America%2FNew_York" style="border-width:0" width="1000px" height="800px" frameborder="0" scrolling="no"></iframe>
+</div>
+<div class="col-md-4">
+  <div class="people-status">
+    <h3>Your Loved Ones</h3>
+    <ul class="people-list">
+    <!--{% for highlight in data.values() %}
+    <li class=flash>{{ highlight }}</li>
+    {% endfor %}-->
+
+    {% for entry in data["statuses"].values() %}
+    <li class="col-md-2 person">
+      <div class="img-container">
+        <img class="person-img" src ="{{entry['img']}}"/>
+      </div>
+      <div class="status">
+         {% if entry["status"]=='Busy' %}
+         <p class="busy"><strong>{{entry["status"]}}</strong> {{ error }}</p>
+         {% elif entry["status"]=='Available'%}
+         <p class="avail"><strong>{{entry["status"]}}</strong> {{ error }}</p>
+         {% endif %}
+      </div>
+    </li>
+    {% endfor %}>
+
+    <!--li class="person">
+      <div class="img-container">
+        <img  class="person-img" src ="/static/img/1.jpeg"/>
+      </div>
+      <div class="status">
+        <p>Busy</p>
+      </div>
+    </li>
+    <li class="person">
+      <div class="img-container">
+        <img  class="person-img" src ="/static/img/2.jpeg"/>
+      </div>
+      <div class="status">
+        <p class="busy">Busy</p>
+      </div>
+    </li>
+    <li class="person">
+      <div class="img-container">
+        <img  class="person-img" src ="/static/img/3.jpeg"/>
+      </div>
+      <div class="status">
+        <p class="avail">Available</p>
+      </div>
+    </li-->
+
+  </ul>
+  </div>
+  <div class="highlights">
+    <h3>Highlights</h3>
+    <ul class="highlights-list">
+    {% for highlight in data["highlights"].values() %}
+    <li class=flash>{{ highlight }}</li>
+    {% endfor %}
+  </ul>
+  </div>
+</div>
+<!--div class="col-xs-2">
+</div-->
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4.2.1/dist/masonry.pkgd.min.js"></script>
+<script type="text/javascript" src="static/js/main.js"></script>
+</body>
+</html>
